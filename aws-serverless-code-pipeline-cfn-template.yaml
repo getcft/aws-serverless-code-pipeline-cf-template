@@ -6,7 +6,7 @@ Parameters:
     - dev
     - stg
     - prod
-    Description: 'Environment dev stage or prod'
+    Description: 'Environment'
     Type: 'String'
     Default: 'stg'
 
@@ -155,6 +155,7 @@ Resources:
       TimeoutInMinutes: 5
       Source:
         Type: CODEPIPELINE
+        BuildSpec: !Join [ "", ["buildspec", "-", !Ref 'Environment', ".yml"]]
       Environment:
         Type: "LINUX_CONTAINER"
         ComputeType: BUILD_GENERAL1_SMALL
