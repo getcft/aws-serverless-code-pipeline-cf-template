@@ -1,0 +1,34 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - rm package-lock.json
+      - npm install --silent --progress=false -g npm
+      
+      ## Dependencies
+      - npm install --silent --progress-false
+      - npm --version
+      - npm install --silent --progress=false -g serverless
+      - npm install --silent --progress=false -g serverless-dynamodb-local
+      - npm install --silent --progress=false -g serverless-dynamodb-client
+      - npm install --silent --save–dev serverless-stack-output
+      
+  build:
+    commands:
+      ## Integration test environment
+      #- serverless deploy --stage test -v
+      - mkdir artifacts
+      - mkdir artifacts/stg
+      - serverless package --package artifacts/dev --stage dev -v
+
+  post_build:
+    commands:
+      ## Remove integration testing environment
+      #- serverless remove --stage test -v
+
+artifacts:
+ files:
+   - artifacts/**/*
+   - serverless.yml
+   - deploy.sh
