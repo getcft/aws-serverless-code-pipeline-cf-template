@@ -41,4 +41,4 @@ AWS Management Console
 * buildspec-stg.yml (Instructions for AWS CodePipeline to build the stage environment if that is chosen in the CloudFormation template)
 * buildspec-prod.yml (Instructions for AWS CodePipeline to build the prod environment if that is chosen in the CloudFormation template)
 * deploy.sh (Instructions for AWS CodePipeline to deploy the chosen environment)
-* Your Serverless framework project (See serverless.com)
+* Your Serverless framework project (See serverless.com) this repo shows you the basic structure.
