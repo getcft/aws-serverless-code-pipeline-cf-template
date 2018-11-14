@@ -42,7 +42,7 @@ The result of the CloudFormation template is that you will have built a AWS Clou
 
 The workflow is as follows, the Github repo/branch you designated with your Serverless code will be sourced initially and upon commits, which then will trigger a AWS CloudBuild project that will package the code (you can add linting here), and send the result to another AWS CloudBuild project that will deploy the code using a deploy script.
 
-If you used this repo as a test you can go to CloudFormation and see two templates one has "aws-serverless-express-application" in the name if you select it and look at the "Outputs" tab you will see "ServiceEndpoint" with a URL click on it and you will get a Hello message.
+If you used this repo as a test you can go to CloudFormation and see two templates one has "aws-serverless-express-application" in the name if you select it and look at the "Outputs" tab you will see "ServiceEndpoint" with a URL click on it and you will get a "Hello World!" message.
 
 Anytime you commit code to the repo/branch you specified it will trigger a new build and deploy it. This will be more relevant when you use it for your own repo/branch and not the test one since you don't have access to commit to this repo.
 
