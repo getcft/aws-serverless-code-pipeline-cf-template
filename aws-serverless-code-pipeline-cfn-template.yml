@@ -271,5 +271,3 @@ Outputs:
     Value: !Ref CodePipelinePolicy
   S3:
     Value: !Ref S3
-
-	
