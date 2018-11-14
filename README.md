@@ -1,6 +1,6 @@
 # aws-serverless-code-pipeline-cfn-template
 
-## Description
+## Description:
 
 This solution allows you to create a AWS Codepipline for deploying a serverless application with AWS CodeBuild triggered by a Github repo commit. The setup of this solution is fully automated via a CloudFormation template.
 
@@ -13,20 +13,20 @@ This solution allows you to create a AWS Codepipline for deploying a serverless 
 
 ## See how it works:
 
-### Step 1
+### Step 1:
 Clone this repo to your local machine or just grab the aws-serverless-code-pipeline-cfn-template.yml file.
 
 ```bash
 git clone git@github.com:getcft/aws-serverless-code-pipeline-cfn-template.git
 ```
 
-### Step 2
+### Step 2:
 AWS Management Console
 
 * Login to AWS Management Console
 * Launch in CloudFormation aws-serverless-code-pipeline-cfn-template.yml (from the repo you cloned)
 
-### CloudFormation Fields:
+CloudFormation Fields:
 
 * Stack name (Enter a name to associate to your AWS CodePipline)
 * CodePipelineBucketPrefix (Enter a name for the utility S3 bucket CodePipline will use)
