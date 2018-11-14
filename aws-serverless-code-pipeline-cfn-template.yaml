@@ -17,7 +17,7 @@ Parameters:
 
   GitHubRepository:
     Type: String
-    Default: getcft/aws-serverless-code-pipeline-cfn-template
+    Default: getcft/aws-serverless-code-pipeline-cfn-template/master
     Description:  owner/repository/branch
 
   GitHubOAuthToken:
