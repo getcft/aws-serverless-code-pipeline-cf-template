@@ -11,7 +11,7 @@ This solution allows you to create a AWS Codepipline for deploying a serverless 
 * Github account
 * Github OAuth token for access via AWS Codepipeline
 
-## See how it works
+## See how it works:
 
 ### Step 1
 Clone this repo to your local machine or just grab the aws-serverless-code-pipeline-cfn-template.yml file.
@@ -35,11 +35,11 @@ AWS Management Console
 * GitHubRepository (The source repo for the pipeline, you can use getcft/aws-serverless-code-pipeline-cfn-template/master to test)
 * Don't forget to check the box "I acknowledge that AWS CloudFormation might create IAM resources with custom names."
 
-### Result
+### Result:
 
 The result of the steps above is that you will have built a AWS CloudPipeline along with two AWS CloudBuild projects to deploy a Hello World Serverless Express Node App (API Gateway and Lambda). The workflow is the Github repo/branch you designated with your Serverless code will be sourced initially and upon commits, which then will trigger a AWS CloudBuild project that will package the code (you can add linting during this step too) and send the result to another AWS CloudBuild project that will deploy the code using a deploy script.
 
-## What you need for your Serverless project and AWS CodePipeline
+## What key things you need for your personal Serverless project and AWS CodePipeline:
 
 * buildspec-dev.yml (Instructions for AWS CodePipeline to build the dev environment if that is chosen in the CloudFormation template)
 * buildspec-stg.yml (Instructions for AWS CodePipeline to build the stage environment if that is chosen in the CloudFormation template)
