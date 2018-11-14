@@ -24,6 +24,7 @@ git clone git@github.com:getcft/aws-serverless-code-pipeline-cfn-template.git
 AWS Management Console
 
 * Login to AWS Management Console
+* This example is in us-west-1 (N. California) so choose that region (note the serverless.yml file is set for us-west-1)
 * Launch in CloudFormation aws-serverless-code-pipeline-cfn-template.yml (from the repo you cloned)
 
 CloudFormation Fields
