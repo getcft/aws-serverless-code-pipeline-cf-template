@@ -39,7 +39,7 @@ AWS Management Console
 
 The result of the steps above is that you will have built a AWS CloudPipeline along with two AWS CloudBuild projects to deploy a Hello World Serverless Express Node App (API Gateway and Lambda). The workflow is the Github repo/branch you designated with your Serverless code will be sourced initially and upon commits, which then will trigger a AWS CloudBuild project that will package the code (you can add linting during this step too) and send the result to another AWS CloudBuild project that will deploy the code using a deploy script.
 
-## What key things for your personal Serverless project and AWS CodePipeline:
+## What key things for your personal AWS CodePipeline and Serverless project:
 
 * buildspec-dev.yml (Instructions for AWS CodePipeline/CodeBuild to build the dev environment if that is chosen in the CloudFormation template)
 * buildspec-stg.yml (Instructions for AWS CodePipeline/CodeBuild to build the stage environment if that is chosen in the CloudFormation template)
