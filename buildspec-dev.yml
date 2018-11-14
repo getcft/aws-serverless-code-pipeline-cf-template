@@ -3,15 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-      - rm package-lock.json
+      #- rm package-lock.json
       - npm install --silent --progress=false -g npm
       
       ## Dependencies
       - npm install --silent --progress-false
       - npm --version
       - npm install --silent --progress=false -g serverless
-      - npm install --silent --progress=false -g serverless-dynamodb-local
-      - npm install --silent --progress=false -g serverless-dynamodb-client
       - npm install --silent --save–dev serverless-stack-output
       
   build:
