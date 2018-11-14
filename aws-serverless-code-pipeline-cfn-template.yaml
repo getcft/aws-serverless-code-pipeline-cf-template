@@ -193,7 +193,7 @@ Resources:
   Pipeline:
     Type: "AWS::CodePipeline::Pipeline"
     Properties:
-      Name: !Join [ "", ["DevOps-Pipeline", "-" !Ref 'AWS::StackName'] ]
+      Name: !Join [ "", ["DevOps-Pipeline", "-", !Ref 'AWS::StackName'] ]
       ArtifactStore:
         Location: !Ref S3
         Type: S3
