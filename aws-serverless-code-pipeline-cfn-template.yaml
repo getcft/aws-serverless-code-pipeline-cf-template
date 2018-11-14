@@ -11,13 +11,13 @@ Parameters:
     Default: 'stg'
 
   CodePipelineBucketPrefix:
-    Description: CodePipeline needs a utility bucket for its internal use.  Specify a unique prefix for the bucket name
+    Description: CodePipeline needs a utility bucket for its internal use. Specify a unique prefix for the bucket name
     Type: String
     Default: codepipeline-work-
 
   GitHubRepository:
     Type: String
-    Default: getcft/aws-serverless-code-pipeline-cfn-template 
+    Default: getcft/aws-serverless-code-pipeline-cfn-template
     Description:  owner/repository/branch
 
   GitHubOAuthToken:
@@ -193,7 +193,7 @@ Resources:
   Pipeline:
     Type: "AWS::CodePipeline::Pipeline"
     Properties:
-      Name: DevOps-Pipeline
+      Name: !Join [ "", ["DevOps-Pipeline", "-" !Ref 'AWS::StackName'] ]
       ArtifactStore:
         Location: !Ref S3
         Type: S3
