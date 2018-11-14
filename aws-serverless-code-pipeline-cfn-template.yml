@@ -257,5 +257,19 @@ Resources:
 Outputs:
   CodeBuild:
     Value: !Ref Pipeline
-  IamRole:
+  Environment:
+    Value: !Ref Environment
+  Github:
+    Value: !Ref GitHubRepository
+  CodeBuildRole:
     Value: !Ref CodeBuildRole
+  CodeBuildPolicy:
+    Value: !Ref CodeBuildPolicy
+  CodePipelineRole:
+    Value: !Ref CodePipelineRole
+  CodePipelinePolicy:
+    Value: !Ref CodePipelinePolicy
+  S3:
+    Value: !Ref S3
+
+	
