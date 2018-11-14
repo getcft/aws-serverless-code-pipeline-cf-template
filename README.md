@@ -7,9 +7,9 @@ This solution allows you to create a AWS Codepipline for deploying a serverless 
 ## Prerequisites:
 
 * AWS account and environment configured with AWS Credentials
-* Serverless Framework installed (see serverless.com)
+* Serverless Framework installed for your project (see serverless.com)
 * Github account
-* Github OAuth token for access via AWS Codepipeline
+* Github OAuth token for access to be used by AWS Codepipeline (https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
 
 ## See how it works:
 
@@ -39,10 +39,10 @@ AWS Management Console
 
 The result of the steps above is that you will have built a AWS CloudPipeline along with two AWS CloudBuild projects to deploy a Hello World Serverless Express Node App (API Gateway and Lambda). The workflow is the Github repo/branch you designated with your Serverless code will be sourced initially and upon commits, which then will trigger a AWS CloudBuild project that will package the code (you can add linting during this step too) and send the result to another AWS CloudBuild project that will deploy the code using a deploy script.
 
-## What key things you need for your personal Serverless project and AWS CodePipeline:
+## What key things for your personal Serverless project and AWS CodePipeline:
 
-* buildspec-dev.yml (Instructions for AWS CodePipeline to build the dev environment if that is chosen in the CloudFormation template)
-* buildspec-stg.yml (Instructions for AWS CodePipeline to build the stage environment if that is chosen in the CloudFormation template)
-* buildspec-prod.yml (Instructions for AWS CodePipeline to build the prod environment if that is chosen in the CloudFormation template)
+* buildspec-dev.yml (Instructions for AWS CodePipeline/CodeBuild to build the dev environment if that is chosen in the CloudFormation template)
+* buildspec-stg.yml (Instructions for AWS CodePipeline/CodeBuild to build the stage environment if that is chosen in the CloudFormation template)
+* buildspec-prod.yml (Instructions for AWS CodePipeline/CodeBuild to build the prod environment if that is chosen in the CloudFormation template)
 * deploy.sh (Instructions for AWS CodePipeline to deploy the chosen environment)
 * Your Serverless framework project (See serverless.com) this repo shows you the basic structure.
