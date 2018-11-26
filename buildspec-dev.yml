@@ -30,3 +30,5 @@ artifacts:
    - artifacts/**/*
    - serverless.yml
    - deploy.sh
+   - package.json
+   - package-lock.json
