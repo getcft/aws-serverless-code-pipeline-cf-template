@@ -11,7 +11,7 @@ _***note AWS S3, API Gateway, Lambda, CodePipeline and CodeBuild as well as Gith
 * [Lambda pricing](https://aws.amazon.com/lambda/pricing/)
 * [CodePipeline pricing](https://aws.amazon.com/codepipeline/pricing/)
 * [CodeBuild pricing](https://aws.amazon.com/codebuild/pricing/)
-* [Github pricing](https://github.com/pricing)
+* [GitHub pricing](https://github.com/pricing)
 
 ## Prerequisites:
 
