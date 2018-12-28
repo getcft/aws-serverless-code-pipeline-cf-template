@@ -4,6 +4,15 @@
 
 This solution allows you to create a AWS Codepipline for deploying a serverless application with AWS CodeBuild triggered by a Github repo commit. The setup of this solution is fully automated via a CloudFormation template.
 
+_***note AWS S3, API Gateway, Lambda, CodePipeline and CodeBuild as well as Github will incur costs**_
+
+* [S3 pricing](https://aws.amazon.com/s3/pricing/)
+* [API Gateway pricing](https://aws.amazon.com/api-gateway/pricing/)
+* [Lambda pricing](https://aws.amazon.com/lambda/pricing/)
+* [CodePipeline pricing](https://aws.amazon.com/codepipeline/pricing/)
+* [CodeBuild pricing](https://aws.amazon.com/codebuild/pricing/)
+* [Github pricing](https://github.com/pricing)
+
 ## Prerequisites:
 
 * AWS account and environment configured with AWS Credentials
