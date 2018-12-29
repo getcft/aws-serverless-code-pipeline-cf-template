@@ -23,7 +23,7 @@ _***note AWS S3, API Gateway, Lambda, CodePipeline and CodeBuild as well as GitH
 ## See how it works:
 
 ### Step 1:
-Clone this repo to your local machine or just grab the aws-serverless-code-pipeline-cf-template.yml file.
+Clone this repo to your local machine or just grab the serverless-code-pipeline-cf-template.yml file.
 
 ```bash
 git clone git@github.com:getcft/aws-serverless-code-pipeline-cf-template.git
@@ -34,7 +34,7 @@ AWS Management Console
 
 * Login to AWS Management Console
 * This example is in us-west-1 (N. California) so choose that region (note the serverless.yml file is set for us-west-1)
-* Launch in CloudFormation aws-serverless-code-pipeline-cf-template.yml (from the repo you cloned)
+* Launch in CloudFormation serverless-code-pipeline-cf-template.yml (from the repo you cloned)
 
 CloudFormation Fields
 
