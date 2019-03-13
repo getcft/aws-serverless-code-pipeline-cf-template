@@ -14,7 +14,7 @@
 
 AWSTemplateFormatVersion: 2010-09-09
 
-Description 'This solution allows you to create a AWS Codepipline for deploying a serverless application with AWS CodeBuild triggered by a Github repo commit. The setup of this solution is fully automated via a CloudFormation template.'
+Description: 'This solution allows you to create a AWS Codepipline for deploying a serverless application with AWS CodeBuild triggered by a Github repo commit. The setup of this solution is fully automated via a CloudFormation template.'
 
 Parameters:
   Environment:
