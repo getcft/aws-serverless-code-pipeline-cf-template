@@ -1,4 +1,5 @@
 # aws-serverless-code-pipeline-cf-template
+[![Build Status](https://travis-ci.org/getcft/aws-serverless-code-pipeline-cf-template.svg?branch=master)](https://travis-ci.org/getcft/aws-serverless-code-pipeline-cf-template)
 
 ## Description:
 
