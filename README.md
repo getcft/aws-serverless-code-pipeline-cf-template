@@ -1,6 +1,8 @@
 # aws-serverless-code-pipeline-cf-template
 [![Build Status](https://travis-ci.org/getcft/aws-serverless-code-pipeline-cf-template.svg?branch=master)](https://travis-ci.org/getcft/aws-serverless-code-pipeline-cf-template)
 
+AWS CloudFormation template creating CodePipeline, CodeBuild supporting Serverless Framework and GitHub
+
 ## Description
 
 This <a href="https://aws.amazon.com/cloudformation/" target="_blank">AWS CloudFormation</a> DevOps solution deploys <a href="https://aws.amazon.com/codepipeline/" target="_blank">AWS CodePipeline</a> to support <a href="https://serverless.com" target="_blank"> Serverless Open Source Framework</a> deployments that are triggered by <a href="https://github.com" target="_blank">GitHub</a> repository commits. As part of AWS CodePipeline <a href="https://aws.amazon.com/codebuild" target="_blank">AWS CodeBuild</a> is leveraged to build and deploy the Serverless open source framework.
