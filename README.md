@@ -32,6 +32,7 @@ As with most AWS services you will incur costs for usage. For this CloudFormatio
 ## Prerequisites
 
 * <a href="https://aws.amazon.com" target="_blank"> Amazon Web Services Account</a>
+  * For this example use us-west-1 if you want to use a different region change serverless.yml
 * <a href="https://aws.amazon.com/iam/" target="_blank">IAM</a> User with the following permissions:
   * Administrator (This could be more specific if you need)
 * <a href="https://serverless.com" target="_blank">Serverless Framework</a> installed for your project. This repository has a test example you can use.
