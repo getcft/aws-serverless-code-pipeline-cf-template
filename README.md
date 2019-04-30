@@ -5,7 +5,7 @@
 
 This <a href="https://aws.amazon.com/cloudformation/" target="_blank">AWS CloudFormation</a> DevOps solution deploys <a href="https://aws.amazon.com/codepipeline/" target="_blank">AWS CodePipeline</a> to support <a href="https://serverless.com" target="_blank"> Serverless Open Source Framework</a> deployments that are triggered by <a href="https://github.com" target="_blank">GitHub</a> repository commits. As part of AWS CodePipeline <a href="https://aws.amazon.com/codebuild" target="_blank">AWS CodeBuild</a> is leveraged to build and deploy the Serverless open source framework.
 
-<img src="/img/serverless-codepipeline-cft.png" alt="AWS Serverless" />
+<img src="serverless-codepipeline-cft.png" alt="AWS CodePipeline and Serverless DevOps CloudFormation Template" />
 
 AWS CodePipeline is a fully managed continuous delivery service that helps you automate your release pipelines for fast and reliable application and infrastructure updates. CodePipeline automates the build, test, and deploy phases of your release process every time there is a code change, based on the release model you define.
 
