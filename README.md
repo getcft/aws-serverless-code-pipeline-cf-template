@@ -79,7 +79,9 @@ As with most AWS services you will incur costs for usage. For this CloudFormatio
 
 In the *AWS Management Console* you should be able to *verify* the following have been created.
 
-* AWS CloudPipeline
+* Two IAM Roles one for CodePipeline and one for CodeBuild both with custom policies
+* An S3 bucket where workflow files are stored
+* AWS CodePipeline
   * One AWS CodeBuild project to package your application.
   * One AWS CodeBuild project to deploy a "Hello World" Serverless Express Node App (API Gateway and Lambda).
 
