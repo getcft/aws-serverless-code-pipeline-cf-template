@@ -1,5 +1,5 @@
 # aws-serverless-code-pipeline-cf-template
-[![Build Status](https://travis-ci.org/getcft/aws-serverless-code-pipeline-cf-template.svg?branch=master)](https://travis-ci.org/getcft/aws-serverless-code-pipeline-cf-template)
+[![CloudFormation Validation](https://github.com/getcft/aws-serverless-code-pipeline-cf-template/actions/workflows/cloudformation-validation.yml/badge.svg)](https://github.com/getcft/aws-serverless-code-pipeline-cf-template/actions/workflows/cloudformation-validation.yml)
 
 AWS CloudFormation template creating CodePipeline, CodeBuild supporting Serverless Framework and GitHub
 

@@ -188,7 +188,7 @@ Resources:
       TimeoutInMinutes: 5
       Source:
         Type: CODEPIPELINE
-        BuildSpec: !Sub |
+        BuildSpec: |
             version: 0.2
             phases:
               build:
