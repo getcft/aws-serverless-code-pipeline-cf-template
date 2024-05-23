@@ -1,0 +1,28 @@
+name: CloudFormation Validation
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+          
+      - name: CloudFormation Template Validation
+        run: |
+          pip install awscli
+          aws cloudformation validate-template --template-body file://serverless-code-pipeline-cf-template.yml --region us-east-1
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: CloudFormation Linter
+        run: |
+          pip install cfn-lint
+          cfn-lint -I serverless-code-pipeline-cf-template.yml
