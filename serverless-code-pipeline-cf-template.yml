@@ -38,8 +38,8 @@ Parameters:
 
   GitHubOAuthToken:
     Type: String
-    Default:  GitHub OAuthToken Here
-    Description:  CodePipeline requires an OAuthToken
+    NoEcho: true
+    Description:  CodePipeline requires an GitHub OAuthToken
 
 Resources:
 
