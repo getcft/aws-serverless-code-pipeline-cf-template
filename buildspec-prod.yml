@@ -3,32 +3,25 @@ version: 0.2
 phases:
   install:
     commands:
-      #- rm package-lock.json
-      - npm install --silent --progress=false -g npm
+      - n 18.19.0
       
       ## Dependencies
       - npm install --silent --progress-false
-      - npm --version
-      - npm install --silent --progress=false -g serverless
+      - npm install --silent --progress=false -g serverless@3.38.0-d09dc659
       - npm install --silent --save–dev serverless-stack-output
       
   build:
     commands:
-      ## Integration test environment
-      #- serverless deploy --stage test -v
-      - mkdir artifacts
-      - mkdir artifacts/prod
-      - serverless package --package artifacts/prod --stage prod -v
+      ## Tests
 
   post_build:
     commands:
-      ## Remove integration testing environment
-      #- serverless remove --stage test -v
+      ## Post build commands
 
 artifacts:
  files:
-   - artifacts/**/*
    - serverless.yml
    - deploy.sh
+   - index.js
    - package.json
    - package-lock.json
