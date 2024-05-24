@@ -56,8 +56,6 @@ As with most AWS services you will incur costs for usage. For this CloudFormatio
   * The serverless framework file that defines AWS Lambda Functions and the events that trigger them along with any resources they require.
 * buildspec-dev.yml ~ buildspec-stg.yml ~ buildspec-prod.yml
   * File or files CodeBuild reads to understand build commands and related settings. There are three representing typical DEV STAGE and PROD environments.
-* deploy.sh
-  * Instructions for AWS CodePipeline to deploy the chosen environment
 
 ## Deploy the CloudFormation Template
 
@@ -87,10 +85,8 @@ In the *AWS Management Console* you should be able to *verify* the following hav
 
 ## Workflow
 
-The workflow is as follows, the Github repo/branch you designated with your Serverless code will be sourced initially and upon commits, which then will trigger a AWS CodeBuild project that will package the code (you can add linting here), and send the result to another AWS CodeBuild project that will deploy the code using a deploy script.
+The workflow is as follows, the Github repo/branch you designated with your Serverless code will be sourced initially and upon commits, which then will trigger a AWS CodeBuild project that will package the code (you can add linting here), and send the result to another AWS CodeBuild project that will deploy the code using serverless framework.
 
 If you used this repository as a test you can go to CloudFormation and see two templates one has "aws-serverless-express-application" in the name if you select it and look at the "Outputs" tab you will see "ServiceEndpoint" with a URL click on it and you will get a "Hello World!" message.
 
 Anytime you commit code to the repo/branch you specified it will trigger a new build and deploy it. This will be more relevant when you use it for your own repo/branch and not the test one since you don't have access to commit to this repository.
-
-

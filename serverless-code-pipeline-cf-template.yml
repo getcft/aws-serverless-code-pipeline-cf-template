@@ -1,4 +1,4 @@
-# Copyright [2018] [Phil Chen]
+# Copyright [2024] [Phil Chen]
 
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -38,8 +38,8 @@ Parameters:
 
   GitHubOAuthToken:
     Type: String
-    Default:  GitHub OAuthToken Here
-    Description:  CodePipeline requires an OAuthToken
+    NoEcho: true
+    Description:  CodePipeline requires an GitHub OAuthToken
 
 Resources:
 
@@ -80,58 +80,22 @@ Resources:
         Statement:
           Effect: Allow
           Action:
-            - logs:CreateLogGroup
-            - logs:CreateLogStream
-            - logs:PutLogEvents
-            - logs:DescribeLogGroups
-            - logs:FilterLogEvents
-            - logs:DescribeLogStreams
-            - logs:DeleteLogGroup
-            - s3:putObject
-            - s3:getObject
-            - codebuild:*
-            - 'cloudformation:List*'
-            - 'cloudformation:Get*'
-            - 'cloudformation:PreviewStackUpdate'
-            - 'cloudformation:ValidateTemplate'
-            - 'cloudformation:CreateStack'
-            - 'cloudformation:CreateUploadBucket'
-            - 'cloudformation:DeleteStack'
-            - 'cloudformation:Describe*'
-            - 'cloudformation:UpdateStack'
-            - 'lambda:Get*'
-            - 'lambda:List*'
-            - 'lambda:CreateFunction'
-            - 'lambda:AddPermission'
-            - 'lambda:CreateAlias'
-            - 'lambda:DeleteFunction'
-            - 'lambda:InvokeFunction'
-            - 'lambda:PublishVersion'
-            - 'lambda:RemovePermission'
-            - 'lambda:Update*'
-            - 'apigateway:GET'
-            - 'apigateway:POST'
-            - 'apigateway:PUT'
-            - 'apigateway:DELETE'
-            - 's3:CreateBucket'
-            - 's3:DeleteBucket'
-            - 's3:ListBucket'
-            - 's3:ListBucketVersions'
-            - 's3:PutObject'
-            - 's3:GetObject'
-            - 's3:DeleteObject'
+            - 'logs:*'
+            - 'codebuild:*'
+            - 'cloudformation:*'
+            - 'lambda:*'
+            - 'apigateway:*'
+            - 's3:*'
             - 'iam:PassRole'
-            - 'kinesis:*'
             - 'iam:GetRole'
             - 'iam:CreateRole'
             - 'iam:PutRolePolicy'
             - 'iam:DeleteRolePolicy'
             - 'iam:DeleteRole'
-            - 'cloudwatch:GetMetricStatistics'
+            - 'iam:TagRole'
             - 'events:Put*'
             - 'events:Remove*'
             - 'events:Delete*'
-            - 'dynamodb:*'
           Resource: "*"
       Roles:
         -  !Ref CodeBuildRole
@@ -175,7 +139,7 @@ Resources:
       Environment:
         Type: "LINUX_CONTAINER"
         ComputeType: BUILD_GENERAL1_SMALL
-        Image: aws/codebuild/nodejs:10.1.0
+        Image: aws/codebuild/standard:7.0
       Artifacts:
         Type: CODEPIPELINE
 
@@ -193,7 +157,11 @@ Resources:
             phases:
               build:
                 commands:
-                  - bash deploy.sh
+                  - n 18.19.0
+                  - npm install --silent --progress-false
+                  - npm install --silent --progress=false -g serverless@3.38.0-d09dc659
+                  - npm install --silent --save–dev serverless-stack-output
+                  - serverless deploy
       Environment:
         Type: "LINUX_CONTAINER"
         ComputeType: BUILD_GENERAL1_SMALL
@@ -201,7 +169,7 @@ Resources:
           - Name: env
             Type: PLAINTEXT
             Value: !Ref Environment
-        Image: aws/codebuild/nodejs:10.1.0
+        Image: aws/codebuild/standard:7.0
       Artifacts:
         Type: CODEPIPELINE
 
@@ -236,7 +204,7 @@ Resources:
               OutputArtifacts:
                 - Name: TheSourceCode
 
-        # Stage 2:  Build using Serverless Framework
+        # Stage 2: Run Your Tests
         - Name: TestBuild
           Actions:
             - Name: Test-Build
